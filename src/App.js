@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Divs from "./views/divs";
+import Contador from "./views/contador";
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
             <Divs />
           </Route>
           <Route path="/Button">
-            <Divs />
+            <Contador />
           </Route>
         </Switch>
       </Router>

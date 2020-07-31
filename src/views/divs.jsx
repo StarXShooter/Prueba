@@ -18,7 +18,7 @@ function Divs() {
   const n = 100;
  
   return (
-    [...Array(n)].map((el, index) => <div key={index}>Divs</div>)
+    [...Array(n)].map((el, index) => <div key={index}>{index}</div>)
   )
 }
 
