@@ -1,24 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 
 
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
-function setRandomColor() {
-  ("#colorpad").css("background-color", getRandomColor());
+const getRandomColor = () => {
+  const colors = ['red', 'orange', 'green', 'blue']
+  return colors[Math.floor(Math.random() * colors.length)];
 }
 
 function Divs() {
+  const [count, setCount ] = useState(0)
+
+  setInterval(() => {
+    let newCount = count + 1
+    setCount(newCount)
+  }, 10000);
+
   const n = 100;
  
   return (
-    [...Array(n)].map((el, index) => <div key={index}>{index}</div>)
+  
+    [...Array(n)].map((el, index) => <div><div key={index}><p style={{backgroundColor: getRandomColor()}}>{index}</p></div></div>
+      )
   )
 }
 
